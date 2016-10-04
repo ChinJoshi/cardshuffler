@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <time.h>
 
 
 int main(){
@@ -14,26 +15,26 @@ std::string  suitchoice;
 numberchoice = number[rand() % 12];
 colorchoice = color[rand() % 1];
 suitchoice = suit[rand() % 4];
+int loopchoice=0;
 
-std::cout << "Enter whether you want to choose a random card or if you want to display a shuffled deck" << std::endl;
-std::cin >> choice;
+while (loopchoice<=0){
+    std::cout << "Enter whether you want to choose a random card or if you want to display a shuffled deck" << std::endl;
+    std::cin >> choice;
+
+srand(time(NULL));
 
 if (choice == "random") {
-	std::cout << "Your card is the " << colorchoice << " " << suitchoice << " of " << numberchoice << std::endl;
+    std::cout << "Your card is the " << colorchoice << " " << suitchoice << " of " << numberchoice << std::endl;
 }
+
 else if (choice == "shuffled") {
 	for (int x = 0; x <= 52; x++) {
 		numberchoice = number[rand() % 13];
 		colorchoice = color[rand() % 2];
 		suitchoice = suit[rand() % 4];
-		std::cout << "Your card is the " << colorchoice << " " << suitchoice << " of " << numberchoice << std::endl;
+		std::cout << "Your card is the " << colorchoice << " " << numberchoice << " of " << suitchoice << std::endl;
 	};
+};
 };
 return 0;
 }
-
-
-
-
-
-
