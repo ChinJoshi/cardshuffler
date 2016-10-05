@@ -4,37 +4,50 @@
 #include <time.h>
 
 
-int main(){
+class foo{
+public:
 std::string number[13] = { "1","2","3","4","5","6","7","8","9","10","jack","queen","king" };
 std::string color[2] = {"red","black"};
 std::string suit[4] = { "clubs","diamonds","spades","hearts" };
 std::string choice;
-std::string numberchoice;
-std::string  colorchoice;
-std::string  suitchoice;
-numberchoice = number[rand() % 12];
-colorchoice = color[rand() % 1];
-suitchoice = suit[rand() % 4];
-int loopchoice=0;
+std::string numberchoice=number[rand() % 12];
+std::string  colorchoice=color[rand() % 1];
+std::string  suitchoice=suit[rand() % 4];
+int loopchoice=1;
+};
 
-while (loopchoice<=0){
-    std::cout << "Enter whether you want to choose a random card or if you want to display a shuffled deck" << std::endl;
-    std::cin >> choice;
+
+int main(){
+    foo foo;
+
+while (foo.loopchoice<2){
+    std::cout<<std::endl;
+    std::cout << "Enter 'random' to pick a one random card"<< std::endl;
+    std::cout << "Enter 'shuffled' to display your shuffled deck"<< std::endl;
+    std::cout << "Enter 'tortilla' to exit the program"<< std::endl;
+    std::cin >> foo.choice;
 
 srand(time(NULL));
 
-if (choice == "random") {
-    std::cout << "Your card is the " << colorchoice << " " << suitchoice << " of " << numberchoice << std::endl;
+if (foo.choice == "random") {
+    std::cout<<std::endl;
+    std::cout << "Your card is the " << foo.colorchoice << " " << foo.suitchoice << " of " << foo.numberchoice << std::endl;
 }
-
-else if (choice == "shuffled") {
+else if (foo.choice == "shuffled") {
 	for (int x = 0; x <= 52; x++) {
-		numberchoice = number[rand() % 13];
-		colorchoice = color[rand() % 2];
-		suitchoice = suit[rand() % 4];
-		std::cout << "Your card is the " << colorchoice << " " << numberchoice << " of " << suitchoice << std::endl;
-	};
+		foo.numberchoice = foo.number[rand() % 13];
+		foo.colorchoice = foo.color[rand() % 2];
+		foo.suitchoice = foo.suit[rand() % 4];
+std::cout<<std::endl;
+		std::cout << "The card is " << foo.colorchoice << " " << foo.numberchoice << " of " << foo.suitchoice << std::endl;
+	}
+}
+else if (foo.choice=="tortilla"){
+    break;
 };
 };
 return 0;
 }
+
+
+
