@@ -17,31 +17,31 @@ public:
 
 int main(){
     Wut foo;
-	while (foo.loopchoice<2){
+    while (foo.loopchoice<2){
     	std::cout<<std::endl;
     	std::cout << "Enter 'random' to pick a one random card"<< std::endl;
     	std::cout << "Enter 'shuffled' to display your shuffled deck"<< std::endl;
     	std::cout << "Enter 'tortilla' to exit the program"<< std::endl;
     	std::cin >> foo.choice;
-		srand(time(NULL));
-		if (foo.choice == "random") {
-    		std::cout<<std::endl;
-    		foo.numberchoice = foo.number[rand() % 13];
+	srand(time(NULL));
+	if (foo.choice == "random") {
+    	    std::cout<<std::endl;
+    	    foo.numberchoice = foo.number[rand() % 13];
             foo.colorchoice = foo.color[rand() % 2];
-			foo.suitchoice = foo.suit[rand() % 4];
-   			std::cout << "Your card is the " << foo.colorchoice << " " << foo.suitchoice << " of " << foo.numberchoice << std::endl;
-		}else if (foo.choice == "shuffled") {
-			for (int x = 0; x <= 52; x++) {
-				foo.numberchoice = foo.number[rand() % 13];
-				foo.colorchoice = foo.color[rand() % 2];
-				foo.suitchoice = foo.suit[rand() % 4];
-				std::cout<<std::endl;
-				std::cout << "The card is " << foo.colorchoice << " " << foo.numberchoice << " of " << foo.suitchoice << std::endl;
-			}
-		}else if (foo.choice=="tortilla"){
-   			break;
-		};
+	    foo.suitchoice = foo.suit[rand() % 4];
+   	    std::cout << "Your card is the " << foo.colorchoice << " " << foo.suitchoice << " of " << foo.numberchoice << std::endl;
+	}else if (foo.choice == "shuffled") {
+	    for (int x = 0; x <= 52; x++) {
+		foo.numberchoice = foo.number[rand() % 13];
+		foo.colorchoice = foo.color[rand() % 2];
+		foo.suitchoice = foo.suit[rand() % 4];
+		std::cout<<std::endl;
+		std::cout << "The card is " << foo.colorchoice << " " << foo.numberchoice << " of " << foo.suitchoice << std::endl;
+	    }
+	}else if (foo.choice=="tortilla"){
+   	    break;
 	};
+    };
 	return 0;
 }
 
