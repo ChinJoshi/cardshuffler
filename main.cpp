@@ -10,8 +10,8 @@ public:
     std::string suit[4] = { "clubs","diamonds","spades","hearts" };
     std::string choice;
     std::string numberchoice=number[rand() % 12];
-    std::string  colorchoice=color[rand() % 1];
-    std::string  suitchoice=suit[rand() % 4];
+    std::string colorchoice=color[rand() % 1];
+    std::string suitchoice=suit[rand() % 4];
     int loopchoice=1;
 };
 
@@ -26,6 +26,9 @@ int main(){
 		srand(time(NULL));
 		if (foo.choice == "random") {
     		std::cout<<std::endl;
+    		foo.numberchoice = foo.number[rand() % 13];
+            foo.colorchoice = foo.color[rand() % 2];
+			foo.suitchoice = foo.suit[rand() % 4];
    			std::cout << "Your card is the " << foo.colorchoice << " " << foo.suitchoice << " of " << foo.numberchoice << std::endl;
 		}else if (foo.choice == "shuffled") {
 			for (int x = 0; x <= 52; x++) {
@@ -41,6 +44,5 @@ int main(){
 	};
 	return 0;
 }
-
 
 
