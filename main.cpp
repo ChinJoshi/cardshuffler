@@ -5,14 +5,14 @@
 
 class Wut{
 public:
-	std::string number[13] = { "1","2","3","4","5","6","7","8","9","10","jack","queen","king" };
-	std::string color[2] = {"red","black"};
-	std::string suit[4] = { "clubs","diamonds","spades","hearts" };
-	std::string choice;
-	std::string numberchoice=number[rand() % 12];
-	std::string  colorchoice=color[rand() % 1];
-	std::string  suitchoice=suit[rand() % 4];
-	int loopchoice=1;
+    std::string number[13] = { "1","2","3","4","5","6","7","8","9","10","jack","queen","king" };
+    std::string color[2] = {"red","black"};
+    std::string suit[4] = { "clubs","diamonds","spades","hearts" };
+    std::string choice;
+    std::string numberchoice=number[rand() % 12];
+    std::string  colorchoice=color[rand() % 1];
+    std::string  suitchoice=suit[rand() % 4];
+    int loopchoice=1;
 };
 
 int main(){
